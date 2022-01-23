@@ -1,0 +1,64 @@
+<div class="menu-container"
+   xmlns:th="http://www.thymeleaf.org"
+   xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" >
+   <ul class="ul-menu">
+   <li class="li-menu">
+   <a th:href="@{/}">Strona Startowa</a>
+   </li>
+   <li class="li-menu">
+   <a th:href="@{/productList}">
+   Lista Produktow
+   </a>
+   </li>
+   <li class="li-menu">
+   <a th:href="@{/shoppingCart}">
+   Koszyk
+   </a>
+   </li>
+   <li class="li-menu">
+   <th:block sec:authorize="hasAnyRole('ROLE_MANAGER','ROLE_EMPLOYEE')">
+      <a th:href="@{/admin/orderList}">
+      Kupione
+      </a>
+   </li> 
+      <li class="li-menu">
+   </th:block>
+   <th:block sec:authorize="hasRole('ROLE_MANAGER')">
+      <a th:href="@{/admin/product}">
+      Dodaj Produkt
+      </a>
+      </li>
+   </th:block>
+   </ul>
+</div>
+
+<style>
+	.menu-container{
+		height: 50px;
+		background: #e96b3f;
+		padding-top: 25px;
+		
+	}
+	
+	.nav{
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.ul-menu{
+		list-style-type: none;
+		margin-left: 150px;
+	}
+	
+	.li-menu{
+		float: left;
+		padding-right: 20px;
+		padding-left: 20px;
+		color: #ffffff;
+	}
+	.li-menu a:visited{
+		text-decoration: none;
+		color: #ffffff;
+	}
+	
+</style>

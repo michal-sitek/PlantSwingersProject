@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8">
+      <title>PlantSwinger</title>
+      <!-- <link rel="stylesheet" type="text/css" th:href="@{/styles.css}" /> -->
+      <link rel="stylesheet" href="style1.css">
+   </head>
+   <body>
+      <th:block th:include="/_header"></th:block>
+      <th:block th:include="/_menu"></th:block>
+       
+      <div class="showcase-class"> <img src="image11.jpg"></div>
+      <section id="boxes">
+            <div class="container">
+               <a th:href="@{/productList}"><div class="box">
+                    <img src="kwiat.png">
+                    <h3>Kwiaty</h3>
+                </div></a>
+
+                <a th:href="@{/productList}"><div class="box">
+                    <img src="kwiat.png">
+                    <h3>Krzewy</h3>
+                </div></a>
+
+                <a th:href="@{/productList}"><div class="box">
+                    <img src="kwiat.png">
+                    <h3>Narzędzia</h3>
+                </div></a>
+            </div>
+        </section>
+        <div></div>
+      
+      <div>
+      <th:block th:include="/_footer"></th:block>
+      </div>
+   </body>
+</html>
+
+<style>
+	.showcase-class{
+		text-align: center;
+		border-bottom: 1px solid #e96b3f;
+	}
+</style>

@@ -1,0 +1,42 @@
+<div class="header-container"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+ 
+ <div class="tytul">
+   <div class="nazwa">PlantSwingers</div>
+   
+   <div class="header-bar">
+      <th:block sec:authorize="isAuthenticated()">
+
+         
+         <a th:href="@{/admin/logout}">Wyloguj</a>
+      </th:block>
+      &nbsp;|&nbsp; 
+      <th:block sec:authorize="!isAuthenticated()">
+         <a th:href="@{/admin/login}">Zaloguj sie</a>
+      </th:block>
+     </div>
+</div>
+</div>
+
+<style>
+
+	.header-container{
+		margin: 0;
+		background: #7CB9A1;
+		height: 100px;
+		padding-top: 50px;
+		color: #ffffff;
+	}
+	.nazwa{
+		margin-left: 100px;
+		font-size: 32px;
+		font-weight: bold;
+		
+	}
+	
+	.tytul{
+		display: grid;
+		grid-template-columns: 80% auto;
+	}
+</style>
